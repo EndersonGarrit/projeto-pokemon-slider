@@ -13,14 +13,18 @@ function mostrarCartao(indiceCartao) {
 }
 
 btnAvancar.addEventListener("click", function () {
-  if (cartaoAtual === cartoes.length - 1) return;
+  if (cartaoAtual === cartoes.length - 1) {
+    cartaoAtual = -1
+  };
   cartaoAtual++;
-  mostrarCartao(cartaoAtual);
   esconderCartaoSelecionado();
+  mostrarCartao(cartaoAtual);
 });
 
 btnVoltar.addEventListener("click", function () {
-  if (cartaoAtual === 0) return;
+  if (cartaoAtual === 0) {
+    cartaoAtual = 3
+  };
   esconderCartaoSelecionado();
   cartaoAtual--;
   mostrarCartao(cartaoAtual);
